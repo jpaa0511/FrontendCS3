@@ -1,29 +1,22 @@
-/*$(document).ready(() => {
-    $.get("http://localhost:3000/plataformas", (rs) => {
-      let t = $("#prueba");
-      rs.forEach((Plataforma) => {
-        t.append(`
-              <img src="${Plataforma.Imagen_URL}" alt="" class="img-fluid">
+$(document).ready(() => {
+  $.get("http://localhost:3000/plataformas", (rs) => {
+    let t = $("#plataformas");
+    rs.forEach((Plataforma) => {
+      t.append(`
+        <div class="col-md-3">
+          <div class="card text-center">
+            <div class="card-body">
+                <img src="${Plataforma.Imagen_URL}" alt="" width="90%" height="200px">
               <h3 class="card-title text-uppercase"> ${Plataforma.Nombre}</h3>
               <p class="m-2">${Plataforma.Descripcion}</p>
               <p class="m-2">${Plataforma.Precio}</p>
-              `);
-      });
+              <div class="d-grid gap-2">
+                <a href="" class="btn btn-danger ">Eliminar plataforma</a>
+                <a href="" class="btn btn-secondary">Editar</a>
+              </div>
+            </div>
+          </div>           
+        </div>`);
     });
-  });*/
-
-$(document).ready(() => {
-    
-    $.get("http://localhost:3000/plataformas", (rs)=>{
-          let t = $("table");
-          rs.forEach(Plataforma =>{
-              t.append(`<tr>
-              <td><img width="100px" src="${Plataforma.Imagen_URL}"></td>
-              <td>${Plataforma.Nombre}</td>
-              <td>${Plataforma.Descripcion}</td>
-              <td>${Plataforma.Precio}</td>
-              </tr>`)
-          });     
-      })
   });
-
+});
