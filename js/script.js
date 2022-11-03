@@ -1,12 +1,13 @@
-$(document).ready(() => {});
+$(document).ready(() => {
+cargarTabla();
+
+});
 
 function cargarTabla() {
-  $('main').load('../index.html');
-
-};
 
   $.get("http://localhost:3000/plataformas", (rs) => {
     let t = $("#plataformas");
+    t.empty();
     rs.forEach((Plataforma) => {
       t.append(`
         <div class="col-md-3">
@@ -25,6 +26,7 @@ function cargarTabla() {
         </div>`);
     });
   });
+};
 
 
 $("#addPlataforma").click(() => {
