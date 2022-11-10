@@ -1,10 +1,8 @@
 $(document).ready(() => {
-cargarTabla();
-
+  cargarTabla();
 });
 
 function cargarTabla() {
-
   $.get("http://localhost:3000/plataformas", (rs) => {
     let t = $("#plataformas");
     t.empty();
@@ -16,18 +14,18 @@ function cargarTabla() {
               <img src="${Plataforma.Imagen_URL}" alt="" width="90%" height="200px">
               <h3 class="card-title text-uppercase"> ${Plataforma.Nombre}</h3>
               <p class="m-2">${Plataforma.Descripcion}</p>
-              <p class="m-2">${Plataforma.Precio}</p>
+              <p class="m-2">$${Plataforma.Precio}</p>
+              <p class="m-2">${Plataforma.Id}</p>
               <div class="d-grid gap-2">
-                <a href="" class="btn btn-danger mx-2">Eliminar plataforma</a>
-                <a href="" class="btn btn-secondary mx-2">Editar</a>
+                <button id= "prueba" data-id="${Plataforma.Id}" class="btn btn-danger mx-2">Eliminar plataforma</button>
+                <button id="editarplat" class="btn btn-secondary mx-2">Editar</button>
               </div> 
             </div>
           </div>           
         </div>`);
     });
   });
-};
-
+}
 
 $("#addPlataforma").click(() => {
   const Imagen_URL = $("#Imagen_URL");
@@ -48,3 +46,13 @@ $("#addPlataforma").click(() => {
     cargarTabla();
   });
 });
+
+$("#").click(() => {
+  alert('copiado')
+});
+
+$("#").on('click', function() {
+  //  ret = DetailsView.GetProject($(this).attr("#data-id"), OnComplete, OnTimeOut, OnError);
+  alert($(this).attr("#data-id"));
+});
+
