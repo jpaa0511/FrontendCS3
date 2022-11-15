@@ -1,3 +1,12 @@
 .bi{
     font-size: 26px;
 }
+
+.bi-plus-square-fill{
+    font-size: 36px;
+    color: #0d6efd;
+}
+
+.btn{
+    border: none;
+}
