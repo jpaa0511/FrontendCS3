@@ -27,6 +27,17 @@ function cargarTabla() {
   });
 };
 
+function eliminar(Id) {
+  $.ajax({
+      url: ("http://localhost:3000/plataformas/"+Id),
+      type: 'DELETE',
+      success: function (result) {
+        console.log(result);
+        cargarTabla();
+
+      }
+  });
+};
 
 $("#addPlataforma").click(() => {
   const Imagen_URL = $("#Imagen_URL");
