@@ -34,7 +34,7 @@ function eliminar(Id) {
       success: function (result) {
         console.log(result);
         cargarTabla();
-
+        /*No carga funcion cargarTabla()*/ 
       }
   });
 };
